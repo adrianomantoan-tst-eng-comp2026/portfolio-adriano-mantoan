@@ -9,7 +9,7 @@ Sou **Técnico em Segurança do Trabalho** e estudante de **Engenharia da Comput
 * Desenvolvimento em Python
 * Aplicações voltadas à Segurança do Trabalho (SST)
 
-Atualmente estou em constante evolução na área de tecnologia, desenvolvendo projetos práticos para consolidar meus conhecimentos e aplicar soluções em cenários reais.
+Atualmente estou em constante evolução na área de tecnologia, desenvolvendo projetos práticos na faculdade para consolidar meus conhecimentos e aplicar soluções em cenários reais.
 
 📍 **Suzano - SP**
 
@@ -55,7 +55,7 @@ Projeto de banco de dados com:
 
 ## 🎯 Objetivo
 
-Atuar na área de tecnologia com foco em:
+Atuar na área de tecnologia com foco no desenvolvimento de soluções em:
 
 * Automação
 * Desenvolvimento de sistemas
@@ -66,6 +66,7 @@ Atuar na área de tecnologia com foco em:
 ## 📞 Contato
 
 📧 Email: [adrianomantoan2010@hotmail.com](mailto:adrianomantoan2010@hotmail.com)
+🔗 LinkedIn: https://www.linkedin.com/in/seu-link-aqui
 📱 WhatsApp: (11) 94781-5911
 
 ---
