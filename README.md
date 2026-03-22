@@ -4,10 +4,10 @@
 
 Sou **Técnico em Segurança do Trabalho** e estudante de **Engenharia da Computação**, com foco em:
 
-* Automação de processos
-* Lógica de programação
-* Desenvolvimento em Python
-* Aplicações voltadas à Segurança do Trabalho (SST)
+* Automação de processes.
+* Lógica de programação.
+* Desenvolvimento em Python.
+* Aplicações voltadas à Segurança do Trabalho (SST).
 
 Atualmente estou em constante evolução na área de tecnologia, desenvolvendo projetos práticos na faculdade para consolidar meus conhecimentos e aplicar soluções em cenários reais.
 
