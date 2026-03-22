@@ -1,56 +1,73 @@
-🚀 Portfólio - Adriano Mantoan
-👨‍💻 Sobre mim
+# 🚀 Portfólio - Adriano Mantoan
 
-Sou Técnico em Segurança do Trabalho e estudante de Engenharia da Computação, com foco em:
+## 👨‍💻 Sobre mim
 
-Automação de processos
-Lógica de programação
-Desenvolvimento em Python
-Aplicações voltadas à Segurança do Trabalho (SST)
+Sou **Técnico em Segurança do Trabalho** e estudante de **Engenharia da Computação**, com foco em:
 
-📍 Suzano - SP
+* Automação de processos
+* Lógica de programação
+* Desenvolvimento em Python
+* Aplicações voltadas à Segurança do Trabalho (SST)
 
-📂 Projetos
-📌 Algorithmic Thinking & POO
+Atualmente estou em constante evolução na área de tecnologia, desenvolvendo projetos práticos para consolidar meus conhecimentos e aplicar soluções em cenários reais.
 
-Projetos desenvolvidos com foco em lógica, estrutura de dados e orientação a objetos.
+📍 **Suzano - SP**
 
-📌 Computational Logic using Python
+---
+
+## 📂 Projetos
+
+### 📌 Algorithmic Thinking & POO
+
+Projetos com foco em lógica, estrutura de dados e orientação a objetos.
+
+### 📌 Computational Logic using Python
 
 Exercícios práticos de lógica de programação em Python.
 
-📌 Computer Architecture and Organization
+### 📌 Computer Architecture and Organization
 
-Estudos sobre arquitetura de computadores e funcionamento interno.
+Estudos sobre arquitetura de computadores.
 
-📌 Computer Network
+### 📌 Computer Network
 
-Conceitos e práticas de redes de computadores.
+Conceitos e práticas de redes.
 
-📌 Modelagem Banco de Dados (MySQL)
+### 📌 Modelagem Banco de Dados (MySQL)
 
-Criação de banco de dados para supermercado com:
+Projeto de banco de dados com:
 
-DER
-MER
-Scripts SQL
-Consultas
-🛠️ Tecnologias utilizadas
-Python 🐍
-MySQL 🗄️
-Git e GitHub 🔧
-Lógica de Programação 🧠
-🎯 Objetivo
+* DER
+* MER
+* Scripts SQL
+* Consultas
+
+---
+
+## 🛠️ Tecnologias
+
+* Python 🐍
+* MySQL 🗄️
+* Git e GitHub 🔧
+* Lógica de Programação 🧠
+
+---
+
+## 🎯 Objetivo
 
 Atuar na área de tecnologia com foco em:
 
-Automação
-Desenvolvimento de sistemas
-Integração com Segurança do Trabalho
-📞 Contato
+* Automação
+* Desenvolvimento de sistemas
+* Integração com Segurança do Trabalho
 
-📧 Email: adrianomantoan2010@hotmail.com
+---
+
+## 📞 Contato
+
+📧 Email: [adrianomantoan2010@hotmail.com](mailto:adrianomantoan2010@hotmail.com)
 📱 WhatsApp: (11) 94781-5911
-🔗 LinkedIn: (coloque seu link aqui depois)
+
+---
 
 ⭐ Se gostou do projeto, deixe uma estrela!
