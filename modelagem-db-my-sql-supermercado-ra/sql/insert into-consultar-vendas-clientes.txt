@@ -1,0 +1,7 @@
+-- Inserção de dados de exemplo
+INSERT INTO tbl_clientes (nome_cliente, cpf, celular) VALUES
+('Adriano Mantoan','111.222.333-45','(11) 94781-2587'),
+('José da Silva','111.222.333-46','(11) 94584-8941'),
+('Maria Joana', '111.222.333-47', '(11) 94781-0258'),
+('Rute Martins', '111.222.333-47', '(11) 95877-2547'),
+('Luiz Carlos ', '111.222.333-49', '(11) 95877-2548'),

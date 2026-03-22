@@ -1,0 +1,95 @@
+
+-- ===============================================
+-- BANCO DE DADOS: SUPERMERCADO R&A
+-- MODELO FÍSICO COM PKs E FKs
+-- ===============================================
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE tbl_item_vendas;
+TRUNCATE TABLE tbl_vendas;
+TRUNCATE TABLE tbl_produto;
+TRUNCATE TABLE tbl_fornecedor;
+TRUNCATE TABLE tbl_colaboradores;
+TRUNCATE TABLE tbl_cliente;
+SET FOREIGN_KEY_CHECKS = 1;
+
+INSERT INTO tbl_cliente (nome_cliente, cpf, telefone) VALUES
+  ('Adriano Mantoan','111.222.333-45','(11) 94781-2587'),
+  ('José da Silva','111.222.333-46','(11) 94584-8941'),
+  ('Maria Joana','111.222.333-47','(11) 94781-0258'),
+  ('Rute Martins','111.222.333-48','(11) 95877-2547'),
+  ('Luiz Carlos','111.222.333-49','(11) 95877-2548');
+
+INSERT INTO tbl_colaboradores (nome_colaborador, cargo, cpf, data_admissao) VALUES
+  ('João Marinho','Operador de Caixa','321.144.323-01','2021-01-01'),
+  ('Claudia Shiller','Atendente','321.144.323-02','2020-01-02'),
+  ('Eliete Bárbara','Chefe Frente de Caixa','321.144.323-03','2018-01-03'),
+  ('Karen Shueller','Operador de Caixa','321.144.323-04','2017-01-04');
+
+INSERT INTO tbl_fornecedor (nome, cnpj, telefone)
+VALUES ('Fornecedor Padrão','11111111000101','(11)40028922');
+
+INSERT INTO tbl_produto (preco_unitario, descricao, tbl_fornecedor_id)
+SELECT 12.00,'REFRIGERANTE DOLLY 2L', f.id FROM tbl_fornecedor f WHERE f.nome='Dolly Refrigerantes'
+UNION ALL
+SELECT 12.00,'Chocolate Nestlé barra 240g', f.id FROM tbl_fornecedor f WHERE f.nome='Nestlé Brasil'
+UNION ALL
+SELECT 7.00,'Requeijão Quatá', f.id FROM tbl_fornecedor f WHERE f.nome='Quatá Laticínios'
+UNION ALL
+SELECT 15.00,'Arroz Camil 5kg', f.id FROM tbl_fornecedor f WHERE f.nome='Camil Alimentos'
+UNION ALL
+SELECT 18.00,'Feijão Camil 5kg', f.id FROM tbl_fornecedor f WHERE f.nome='Camil Alimentos (Feijão)'
+UNION ALL
+SELECT 15.00,'Batata Bt 1kg', f.id FROM tbl_fornecedor f WHERE f.nome='Fornecedor FLV 1'
+UNION ALL
+SELECT 6.00,'Banana Taira 1kg', f.id FROM tbl_fornecedor f WHERE f.nome='Fornecedor FLV 1'
+UNION ALL
+SELECT 9.00,'Tomate Taira 1kg', f.id FROM tbl_fornecedor f WHERE f.nome='Fornecedor FLV 2';
+
+INSERT INTO tbl_vendas (valor_total, data_venda, tbl_cliente_id, tbl_colaboradores_id) VALUES
+  (12.00,'2022-07-25',1,1),
+  (24.00,'2022-07-25',2,1);
+  
+INSERT INTO tbl_vendas (valor_total, data_venda, tbl_cliente_id, tbl_colaboradores_id) VALUES
+  (12.00, '2022-07-25', 1, 1),
+  (24.00, '2022-07-25', 2, 1);
+
+SELECT 
+    v.id AS id_venda,
+    c.nome_cliente,
+    v.data_venda,
+    p.descricao AS produto,
+    i.quantidade,
+    i.preco_unitario,
+    (i.quantidade * i.preco_unitario) AS subtotal,
+    v.valor_total
+FROM tbl_vendas v
+JOIN tbl_cliente c ON v.tbl_cliente_id = c.id
+JOIN tbl_item_vendas i ON v.id = i.tbl_vendas_id
+JOIN tbl_produto p ON i.tbl_produto_id = p.id
+ORDER BY v.data_venda DESC;
+
+SELECT 
+    v.id AS id_venda,
+    c.nome_cliente,
+    v.data_venda,
+    p.descricao AS produto,
+    i.quantidade,
+    i.preco_unitario,
+    (i.quantidade * i.preco_unitario) AS subtotal,
+    v.valor_total
+FROM tbl_vendas v
+JOIN tbl_cliente c ON v.tbl_cliente_id = c.id
+JOIN tbl_item_vendas i ON v.id = i.tbl_vendas_id
+JOIN tbl_produto p ON i.tbl_produto_id = p.id
+WHERE c.nome_cliente = 'Adriano Mantoan'
+ORDER BY v.data_venda DESC;
+
+SELECT 
+    c.nome_cliente,
+    SUM(v.valor_total) AS total_compras
+FROM tbl_vendas v
+JOIN tbl_cliente c ON v.tbl_cliente_id = c.id
+WHERE c.nome_cliente = 'Adriano Mantoan'
+GROUP BY c.nome_cliente;
+

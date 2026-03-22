@@ -1,0 +1,14 @@
+SELECT 
+  v.id AS id_venda,
+  c.nome_cliente,
+  v.data_venda,
+  p.descricao AS produto,
+  i.quantidade,
+  i.preco_unitario,
+  (i.quantidade * i.preco_unitario) AS subtotal,
+  v.valor_total
+FROM tbl_vendas v
+LEFT JOIN tbl_cliente      c ON v.tbl_cliente_id = c.id
+LEFT JOIN tbl_item_vendas  i ON v.id = i.tbl_vendas_id
+LEFT JOIN tbl_produto      p ON i.tbl_produto_id = p.id
+ORDER BY v.data_venda DESC;

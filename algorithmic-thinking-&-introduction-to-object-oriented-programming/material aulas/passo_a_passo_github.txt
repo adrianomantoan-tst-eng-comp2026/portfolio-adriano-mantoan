@@ -1,0 +1,16 @@
+PASSO A PASSO PARA PUBLICAR NO GITHUB
+
+1. Crie uma conta em https://github.com
+2. Clique em New repository.
+3. Dê um nome ao repositório: orcamento-imobiliario-unifecaf
+4. No computador, abra a pasta do projeto.
+5. Abra o terminal na pasta do projeto e execute:
+
+   git init
+   git add .
+   git commit -m "Projeto inicial UniFECAF"
+   git branch -M main
+   git remote add origin https://github.com/SEU-USUARIO/orcamento-imobiliario-unifecaf.git
+   git push -u origin main
+
+6. Copie o link do repositório e cole no trabalho.
