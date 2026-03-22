@@ -66,7 +66,7 @@ Atuar na área de tecnologia com foco no desenvolvimento de soluções em:
 ## 📞 Contato
 
 📧 Email: [adrianomantoan2010@hotmail.com](mailto:adrianomantoan2010@hotmail.com)
-🔗 LinkedIn: https://www.linkedin.com/in/seu-link-aqui
+🔗 LinkedIn: https://www.linkedin.com/in/adrianomantoan/
 📱 WhatsApp: (11) 94781-5911
 
 ---
