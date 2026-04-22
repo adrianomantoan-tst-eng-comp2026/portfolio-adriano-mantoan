@@ -11,153 +11,217 @@
 
 ## 📌 Sobre o Projeto
 
-Este projeto demonstra a criação e configuração de um servidor web utilizando **Windows Server 2022** em ambiente virtualizado com **Oracle VirtualBox**, simulando um cenário real de hospedagem.
+Este projeto demonstra a criação e configuração de um **servidor web completo** utilizando **Windows Server 2022** em ambiente virtualizado com **Oracle VirtualBox**, simulando um cenário real de hospedagem.
+
+Durante o desenvolvimento, foram aplicados conceitos de:
+
+✔ Virtualização  
+✔ Redes (NAT e Port Forwarding)  
+✔ Servidor Web (IIS)  
+✔ Protocolos HTTP e HTTPS  
+✔ Exposição de serviços para acesso externo  
+
+---
+
+## 🎯 Objetivo
+
+Criar um ambiente funcional onde um site possa ser:
+
+✔ Hospedado em uma máquina virtual  
+✔ Acessado localmente (VM)  
+✔ Acessado pelo host (PC)  
+✔ Exposto para a internet (via ngrok)  
 
 ---
 
 ## 🖥️ Tecnologias Utilizadas
 
-* Windows Server 2022
-* Oracle VirtualBox
-* IIS (Internet Information Services)
-* HTML, CSS e JavaScript
+- Windows Server 2022  
+- Oracle VirtualBox  
+- IIS (Internet Information Services)  
+- HTML, CSS e JavaScript  
+- Ngrok (túnel para acesso externo)  
 
 ---
 
-## ⚙️ Arquitetura
+## 🏗️ Arquitetura
 
 PC (Host)
 ↓
 VirtualBox (NAT)
 ↓
-Windows Server (VM)
+Windows Server 2022 (VM)
 ↓
 IIS (porta 80)
 ↓
 Site hospedado
 
+
 ---
 
 ## 🔧 Etapas do Projeto
 
-### 1. Máquina Virtual
+### 🔹 1. Máquina Virtual
+- Criação no VirtualBox  
+- Configuração de memória, CPU e disco  
+- Instalação do Windows Server 2022  
 
-* Criação no VirtualBox
-* Configuração de memória e disco
-* Instalação do Windows Server
+---
 
-### 2. IIS
+### 🔹 2. Instalação do IIS
+- Instalação via Server Manager  
+- Ativação do serviço Web Server  
+- Configuração do ambiente  
 
-* Instalação via Server Manager
-* Ativação do serviço
+---
 
-### 3. Publicação do Site
-
-Diretório:
+### 🔹 3. Publicação do Site
+- Criação de arquivo HTML  
+- Diretório padrão:
 C:\inetpub\wwwroot
 
-Acesso:
+- Acesso interno:
 http://localhost
 
 ---
 
-## 🌐 Rede
+## 🌐 Configuração de Rede
 
-### NAT (utilizado)
+### 🔹 NAT (utilizado)
+- IP interno da VM: `10.0.2.15`
+- Rede isolada
 
-* IP interno: 10.0.2.15
-* Necessário redirecionamento
+---
 
-### Port Forwarding
+### 🔹 Port Forwarding
+- Porta do host: **8080**
+- Porta da VM: **80**
 
-Host: 8080 → VM: 80
-
-Acesso externo:
+Acesso pelo PC:
 http://localhost:8080
+
+---
+
+## 🌍 Acesso Externo (NGROK) ⭐ DIFERENCIAL
+
+Para simular um ambiente real de hospedagem, foi utilizado o **ngrok**, permitindo acesso ao servidor via internet.
+
+### 🔹 Comando utilizado:
+ngrok http 80
+
+### 🔹 Resultado:
+- Geração de URL pública HTTPS
+- Acesso externo ao site hospedado na VM
+
+Exemplo:
+https://xxxx.ngrok-free.dev
 
 ---
 
 ## 🔐 Segurança
 
-* HTTP (porta 80)
-* Estudo de HTTPS (porta 443)
-* Ambiente local para testes
+- Utilização do protocolo HTTP (porta 80)
+- Estudo do HTTPS (porta 443)
+- Ambiente local controlado
+- ngrok fornece camada segura (HTTPS automático)
 
 ---
 
 ## 🗄️ Banco de Dados
 
 Não foi utilizado banco de dados neste projeto.
-Em cenários reais, recomenda-se MySQL ou PostgreSQL.
+
+Em cenários reais, recomenda-se:
+- MySQL  
+- PostgreSQL  
 
 ---
 
-## 🧪 Testes
+## 🧪 Testes Realizados
 
-* Acesso interno (localhost)
-* Acesso externo (localhost:8080)
-* Verificação do IIS
-* Testes de rede
+✔ Acesso via localhost na VM  
+✔ Acesso via localhost:8080 no host  
+✔ Verificação do IIS em execução  
+✔ Teste de IP interno da VM  
+✔ Teste de acesso externo via ngrok  
 
 ---
 
-## ⚠️ Desafios
+## ⚠️ Desafios Enfrentados
 
-* Erro HTTP 403
-* Configuração do IIS
-* Acesso via IP da VM
-* Conflito de portas
+- Erro HTTP 403 (acesso negado)  
+- Configuração inicial do IIS  
+- Falha ao acessar via IP da VM  
+- Conflito de portas no VirtualBox  
+- Configuração do ngrok  
 
 ---
 
 ## 📸 Demonstração
 
 ### 🔹 Máquina Virtual criada
-![VM criada](./images/vm-criada.png)
+![VM criada](./imagens/maquina-virtual.png)
 
 ---
 
 ### 🔹 Serviço IIS em execução
-![IIS rodando](./images/iis.png)
+![IIS rodando](./imagens/iis.png)
 
 ---
 
 ### 🔹 Comando ipconfig (IP da VM)
-![IP da VM](./images/ipconfig.png)
+![IP da VM](./imagens/ipconfig.png)
 
 ---
 
 ### 🔹 Configuração de Port Forwarding
-![Port Forwarding](./images/port-forwarding.png)
+![Port Forwarding](./imagens/port-forwarding.png)
 
 ---
 
 ### 🔹 Site funcionando na VM
-![Site VM](./images/site-vm.png)
-
----
-
-### 🔹 Armazenamento arquivos wwwroot no Site funcionando na VM
-![Arquivos wwwroot Site VM](./images/wwwroot.png)
+![Site VM](./imagens/site-vm.png)
 
 ---
 
 ### 🔹 Acesso via Host (localhost:8080)
-![Host acesso](./images/host-8080.png)
+![Host acesso](./imagens/host-8080.png)
+
+---
+
+### 🔹 Execução do ngrok
+![Ngrok](./imagens/ngrok.png)
+
+---
+
+### 🔹 Página de validação do ngrok
+![Ngrok validação](./imagens/ngrok-validacao.png)
+
+---
+
+### 🔹 Site acessado externamente
+![Ngrok site](./imagens/site-ngrok.png)
 
 ---
 
 ## 🚀 Melhorias Futuras
 
-* Implementar HTTPS
-* Integrar banco de dados
-* Publicar na internet
+- Implementação completa de HTTPS com certificado  
+- Integração com banco de dados  
+- Deploy em servidor real (cloud)  
+- Automação do ambiente  
 
 ---
 
 ## 👨‍💻 Autor
 
-Adriano Mantoan
-Engenharia da Computação
+**Adriano Mantoan**  
+Estudante de Engenharia da Computação  
+Técnico em Segurança do Trabalho  
 
 ---
+
+## 📌 Destaque
+
+Este projeto demonstra na prática a criação de um ambiente de servidor web funcional, incluindo acesso externo, aproximando o cenário acadêmico de uma aplicação real de mercado.
+
