@@ -1,4 +1,4 @@
-\# 🔐 Cyber Security - Projeto Acadêmico
+# 🔐 Cyber Security - Projeto Acadêmico
 
 
 
@@ -6,7 +6,7 @@ Projeto acadêmico desenvolvido para a disciplina de Cyber Security da UniFECAF.
 
 
 
-\## 🎯 Objetivo
+## 🎯 Objetivo
 
 
 
@@ -14,79 +14,69 @@ O objetivo deste trabalho foi aplicar conceitos básicos de segurança da inform
 
 
 
-\---
+---
 
 
 
-\## 🛠️ Ferramentas Utilizadas
+## 🛠️ Ferramentas Utilizadas
 
 
 
-\* Wireshark
+* Wireshark
 
-\* Nmap
+* Nmap
 
-\* VirusTotal
+* VirusTotal
 
-\* Prompt de Comando (CMD)
+* Prompt de Comando (CMD)
 
-\* Windows 10
-
-
-
-\---
+* Windows 10
 
 
 
-\## 🔎 Atividades Realizadas
+---
 
 
 
-\### ✅ Captura de pacotes com Wireshark
+## 🔎 Atividades Realizadas
 
 
 
-\* Monitoramento de tráfego DNS
-
-\* Captura de pacotes TCP
-
-\* Análise de tráfego HTTP
+### ✅ Captura de pacotes com Wireshark
 
 
 
-\### ✅ Varredura de portas com Nmap
+* Monitoramento de tráfego DNS
+
+* Captura de pacotes TCP
+
+* Análise de tráfego HTTP
+
+
+### ✅ Varredura de portas com Nmap
 
 
 
-\* Escaneamento da máquina local
+* Escaneamento da máquina local
 
-\* Identificação de portas abertas
+* Identificação de portas abertas
 
-\* Análise de serviços ativos
-
-
-
-\### ✅ Análise de URLs no VirusTotal
+* Análise de serviços ativos
 
 
+### ✅ Análise de URLs no VirusTotal
 
-\* Verificação de reputação
+* Verificação de reputação
 
-\* Análise de ameaças
+* Análise de ameaças
 
-\* Consulta de segurança online
+* Consulta de segurança online
 
+---
 
+## 📂 Estrutura do Projeto
 
-\---
-
-
-
-\## 📂 Estrutura do Projeto
-
-
-
-```bash
+bash
 
 Cyber Security/
 
@@ -102,49 +92,27 @@ Cyber Security/
 
 ├── imagens/
 
-```
+---
 
-
-
-\---
-
-
-
-\## 📸 Evidências
-
-
+## 📸 Evidências
 
 As evidências das análises realizadas estão disponíveis na pasta:
 
+bash
 
+imagens
 
-```bash
+---
 
-/imagens
-
-```
-
-
-
-\---
-
-
-
-\## 🎓 Instituição
+## 🎓 Instituição
 
 
 
 UniFECAF – Engenharia da Computação
 
+---
 
-
-\---
-
-
-
-\## 👨‍💻 Autor
-
-
+## 👨‍💻 Autor
 
 Adriano Mantoan
 
