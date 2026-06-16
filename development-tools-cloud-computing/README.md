@@ -1,10 +1,12 @@
-# Development Tools & Cloud Computing
+# ☁️ Ferramentas de Desenvolvimento e Computação em Nuvem
 
-## Objetivo
+Implementação de ambiente Cliente/Servidor utilizando Oracle VirtualBox, Ubuntu Linux e Apache2.
 
-Implementação de um ambiente Cliente/Servidor utilizando Oracle VirtualBox, Ubuntu Linux e Apache2.
+## 🎯 Objetivo
 
-## Tecnologias Utilizadas
+Desenvolver um ambiente Cliente/Servidor virtualizado para publicação de conteúdo web utilizando Apache2 e Linux Ubuntu.
+
+## 🛠 Tecnologias Utilizadas
 
 - Oracle VirtualBox
 - Ubuntu Server 26.04 LTS
@@ -13,18 +15,29 @@ Implementação de um ambiente Cliente/Servidor utilizando Oracle VirtualBox, Ub
 - HTML5
 - Linux
 
-## Atividades Desenvolvidas
+## 📚 Atividades Desenvolvidas
 
-- Criação das máquinas virtuais Cliente e Servidor
-- Instalação do Ubuntu Linux
+- Criação da VM Servidor
+- Criação da VM Cliente
+- Instalação do Ubuntu
 - Configuração de rede Host-Only
-- Configuração de endereço IP estático
-- Instalação e configuração do Apache2
-- Criação e publicação de página HTML
-- Testes de conectividade utilizando ping
-- Acesso ao servidor via navegador web
+- Configuração IP estático
+- Instalação do Apache2
+- Publicação de página HTML
+- Testes de conectividade
+- Validação do acesso Cliente → Servidor
 
-## Estrutura do Projeto
+## 🖥 Resultado
+
+Servidor:
+
+192.168.10.10
+
+Cliente acessando via navegador Firefox:
+
+http://192.168.10.10
+
+## 📂 Estrutura
 
 ```text
 development-tools-cloud-computing
@@ -34,21 +47,4 @@ development-tools-cloud-computing
 └── images
     ├── figura01.png
     ├── figura02.png
-    └── ...
-```
-
-## Resultado Final
-
-O cliente acessa corretamente o servidor através do endereço:
-
-http://192.168.10.10
-
-O servidor Apache2 disponibiliza a página HTML desenvolvida para o projeto.
-
-## Autor
-
-Adriano Mantoan
-
-Técnico em Segurança do Trabalho
-
-Estudante de Engenharia da Computação
+    └── figura26.png
