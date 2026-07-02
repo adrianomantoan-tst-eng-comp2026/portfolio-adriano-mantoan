@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechFlow Task Manager</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -19,28 +18,57 @@
 <main>
 
     <section>
+        <h2>Cadastrar Nova Tarefa</h2>
 
-        <h2>Bem-vindo!</h2>
+        <form action="{{ url_for('cadastrar') }}" method="POST">
+            <label>Título da tarefa</label>
+            <input type="text" name="titulo" required>
 
-        <p>
-            Este projeto está sendo desenvolvido para a disciplina de
-            Engenharia de Software da UniFECAF.
-        </p>
+            <label>Descrição</label>
+            <textarea name="descricao"></textarea>
 
-        <button>Nova Tarefa</button>
+            <button type="submit">Salvar Tarefa</button>
+        </form>
+    </section>
 
+    <section>
+        <h2>Tarefas Cadastradas</h2>
+
+        {% if tarefas %}
+            {% for tarefa in tarefas %}
+                <div class="tarefa">
+
+    <div class="cabecalho-tarefa">
+        <h3>#{{ tarefa.id }} - {{ tarefa.titulo }}</h3>
+        <span class="status">{{ tarefa.status }}</span>
+    </div>
+
+    <p>{{ tarefa.descricao }}</p>
+
+    <div class="acoes">
+
+        <button class="editar">
+            Editar
+        </button>
+
+        <button class="excluir">
+            Excluir
+        </button>
+
+    </div>
+
+</div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhuma tarefa cadastrada até o momento.</p>
+        {% endif %}
     </section>
 
 </main>
 
 <footer>
-
-    <p>
-        © 2026 - Adriano Mantoan | Engenharia da Computação - UniFECAF
-    </p>
-
+    <p>© 2026 - Adriano Mantoan | Engenharia da Computação - UniFECAF</p>
 </footer>
 
 </body>
-
 </html>
