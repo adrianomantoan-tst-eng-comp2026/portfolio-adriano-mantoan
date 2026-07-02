@@ -55,7 +55,6 @@
         <h2>Tarefas Cadastradas</h2>
 
         <form action="{{ url_for('home') }}" method="GET" class="pesquisa">
-
             <input
                 type="text"
                 name="pesquisa"
@@ -68,7 +67,6 @@
             <a href="{{ url_for('home') }}">
                 <button type="button">Limpar</button>
             </a>
-
         </form>
 
         {% if tarefas %}
@@ -90,6 +88,26 @@
                         <a href="{{ url_for('excluir', id=tarefa.id) }}">
                             <button class="excluir" type="button">Excluir</button>
                         </a>
+
+                        <form
+                            action="{{ url_for('alterar_status', id=tarefa.id) }}"
+                            method="POST"
+                            class="form-status"
+                        >
+                            <select name="status" onchange="this.form.submit()">
+                                <option value="A Fazer" {% if tarefa.status == "A Fazer" %}selected{% endif %}>
+                                    A Fazer
+                                </option>
+
+                                <option value="Em Andamento" {% if tarefa.status == "Em Andamento" %}selected{% endif %}>
+                                    Em Andamento
+                                </option>
+
+                                <option value="Concluída" {% if tarefa.status == "Concluída" %}selected{% endif %}>
+                                    Concluída
+                                </option>
+                            </select>
+                        </form>
                     </div>
 
                 </div>

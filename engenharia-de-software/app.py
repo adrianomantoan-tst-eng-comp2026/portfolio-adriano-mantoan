@@ -81,5 +81,17 @@ def excluir(id):
     return redirect(url_for("home"))
 
 
+@app.route("/alterar_status/<int:id>", methods=["POST"])
+def alterar_status(id):
+    novo_status = request.form.get("status")
+
+    for tarefa in tarefas:
+        if tarefa["id"] == id:
+            tarefa["status"] = novo_status
+            break
+
+    return redirect(url_for("home"))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
