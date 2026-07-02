@@ -18,16 +18,36 @@
 <main>
 
     <section>
-        <h2>Cadastrar Nova Tarefa</h2>
+        {% if tarefa_edicao %}
+            <h2>Editar Tarefa</h2>
+            <form action="{{ url_for('atualizar', id=tarefa_edicao.id) }}" method="POST">
+        {% else %}
+            <h2>Cadastrar Nova Tarefa</h2>
+            <form action="{{ url_for('cadastrar') }}" method="POST">
+        {% endif %}
 
-        <form action="{{ url_for('cadastrar') }}" method="POST">
             <label>Título da tarefa</label>
-            <input type="text" name="titulo" required>
+            <input
+                type="text"
+                name="titulo"
+                value="{{ tarefa_edicao.titulo if tarefa_edicao else '' }}"
+                required
+            >
 
             <label>Descrição</label>
-            <textarea name="descricao"></textarea>
+            <textarea name="descricao" required>{{ tarefa_edicao.descricao if tarefa_edicao else '' }}</textarea>
 
-            <button type="submit">Salvar Tarefa</button>
+            {% if tarefa_edicao %}
+                <input type="hidden" name="id" value="{{ tarefa_edicao.id }}">
+            {% endif %}
+
+            <button type="submit">
+                {% if tarefa_edicao %}
+                    Atualizar Tarefa
+                {% else %}
+                    Salvar Tarefa
+                {% endif %}
+            </button>
         </form>
     </section>
 
@@ -38,26 +58,24 @@
             {% for tarefa in tarefas %}
                 <div class="tarefa">
 
-    <div class="cabecalho-tarefa">
-        <h3>#{{ tarefa.id }} - {{ tarefa.titulo }}</h3>
-        <span class="status">{{ tarefa.status }}</span>
-    </div>
+                    <div class="cabecalho-tarefa">
+                        <h3>#{{ tarefa.id }} - {{ tarefa.titulo }}</h3>
+                        <span class="status">{{ tarefa.status }}</span>
+                    </div>
 
-    <p>{{ tarefa.descricao }}</p>
+                    <p>{{ tarefa.descricao }}</p>
 
-    <div class="acoes">
+                    <div class="acoes">
+                        <a href="{{ url_for('editar', id=tarefa.id) }}">
+                            <button class="editar" type="button">Editar</button>
+                        </a>
 
-        <button class="editar">
-            Editar
-        </button>
+                        <a href="{{ url_for('excluir', id=tarefa.id) }}">
+    <button class="excluir" type="button">Excluir</button>
+</a>
+                    </div>
 
-        <button class="excluir">
-            Excluir
-        </button>
-
-    </div>
-
-</div>
+                </div>
             {% endfor %}
         {% else %}
             <p>Nenhuma tarefa cadastrada até o momento.</p>
