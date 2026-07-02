@@ -54,6 +54,23 @@
     <section>
         <h2>Tarefas Cadastradas</h2>
 
+        <form action="{{ url_for('home') }}" method="GET" class="pesquisa">
+
+            <input
+                type="text"
+                name="pesquisa"
+                placeholder="Pesquisar por título ou descrição..."
+                value="{{ pesquisa }}"
+            >
+
+            <button type="submit">Pesquisar</button>
+
+            <a href="{{ url_for('home') }}">
+                <button type="button">Limpar</button>
+            </a>
+
+        </form>
+
         {% if tarefas %}
             {% for tarefa in tarefas %}
                 <div class="tarefa">
@@ -71,14 +88,14 @@
                         </a>
 
                         <a href="{{ url_for('excluir', id=tarefa.id) }}">
-    <button class="excluir" type="button">Excluir</button>
-</a>
+                            <button class="excluir" type="button">Excluir</button>
+                        </a>
                     </div>
 
                 </div>
             {% endfor %}
         {% else %}
-            <p>Nenhuma tarefa cadastrada até o momento.</p>
+            <p>Nenhuma tarefa encontrada ou cadastrada até o momento.</p>
         {% endif %}
     </section>
 

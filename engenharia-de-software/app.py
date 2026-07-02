@@ -7,7 +7,23 @@ tarefas = []
 
 @app.route("/")
 def home():
-    return render_template("index.html", tarefas=tarefas, tarefa_edicao=None)
+    pesquisa = request.args.get("pesquisa", "").strip()
+
+    if pesquisa:
+        tarefas_filtradas = [
+            tarefa for tarefa in tarefas
+            if pesquisa.lower() in tarefa["titulo"].lower()
+            or pesquisa.lower() in tarefa["descricao"].lower()
+        ]
+    else:
+        tarefas_filtradas = tarefas
+
+    return render_template(
+        "index.html",
+        tarefas=tarefas_filtradas,
+        tarefa_edicao=None,
+        pesquisa=pesquisa
+    )
 
 
 @app.route("/cadastrar", methods=["POST"])
@@ -37,7 +53,12 @@ def editar(id):
             tarefa_edicao = tarefa
             break
 
-    return render_template("index.html", tarefas=tarefas, tarefa_edicao=tarefa_edicao)
+    return render_template(
+        "index.html",
+        tarefas=tarefas,
+        tarefa_edicao=tarefa_edicao,
+        pesquisa=""
+    )
 
 
 @app.route("/atualizar/<int:id>", methods=["POST"])
@@ -48,13 +69,14 @@ def atualizar(id):
             tarefa["descricao"] = request.form.get("descricao")
             break
 
+    return redirect(url_for("home"))
+
+
 @app.route("/excluir/<int:id>")
 def excluir(id):
     global tarefas
 
     tarefas = [tarefa for tarefa in tarefas if tarefa["id"] != id]
-
-    return redirect(url_for("home"))
 
     return redirect(url_for("home"))
 
