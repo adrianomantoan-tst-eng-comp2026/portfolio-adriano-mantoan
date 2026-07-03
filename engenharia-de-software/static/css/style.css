@@ -1,3 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #0d6efd, #084298);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #084298;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -11,7 +53,6 @@ select {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 15px;
-    box-sizing: border-box;
 }
 
 textarea {
@@ -19,9 +60,22 @@ textarea {
     resize: vertical;
 }
 
+button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: .9;
+}
+
 .pesquisa {
     display: flex;
-    flex-direction: row;
     gap: 10px;
     margin: 20px 0;
     align-items: center;
@@ -31,29 +85,52 @@ textarea {
     flex: 1;
 }
 
-.pesquisa button {
-    background: #0d6efd;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 .pesquisa a button {
     background: #6c757d;
 }
+
+/* ===========================
+   CONTADOR
+=========================== */
+
+.contador-tarefas {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contador-card {
+    background: #f8f9fa;
+    border-left: 5px solid #0d6efd;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+}
+
+.contador-card strong {
+    display: block;
+    font-size: 32px;
+    color: #084298;
+}
+
+.contador-card span {
+    display: block;
+    margin-top: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* ===========================
+   TAREFAS
+=========================== */
 
 .tarefa {
     margin-top: 20px;
     padding: 20px;
     border-left: 5px solid #0d6efd;
     background: #f8f9fa;
-    border-radius: 6px;
-}
-
-.tarefa h3 {
-    margin-bottom: 8px;
+    border-radius: 8px;
 }
 
 .cabecalho-tarefa {
@@ -64,7 +141,7 @@ textarea {
 
 .status {
     background: #ffc107;
-    color: #000;
+    color: black;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 13px;
@@ -74,26 +151,16 @@ textarea {
 .acoes {
     margin-top: 20px;
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
 }
 
 .editar {
     background: #0d6efd;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 .excluir {
     background: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 .form-status {
@@ -101,16 +168,47 @@ textarea {
 }
 
 .form-status select {
-    padding: 10px 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 10px;
     cursor: pointer;
-    font-weight: bold;
 }
 
-.pesquisa button:hover,
-.editar:hover,
-.excluir:hover,
-.form-status select:hover {
-    opacity: 0.9;
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:900px){
+
+    .contador-tarefas{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .contador-tarefas{
+        grid-template-columns:1fr;
+    }
+
+    .pesquisa{
+        flex-direction:column;
+    }
+
+    .cabecalho-tarefa{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .acoes{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
 }

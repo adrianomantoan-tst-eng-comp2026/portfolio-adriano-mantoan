@@ -7,7 +7,8 @@ from database import (
     buscar_tarefa,
     atualizar_tarefa,
     excluir_tarefa,
-    alterar_status
+    alterar_status,
+    contar_tarefas
 )
 
 app = Flask(__name__)
@@ -30,11 +31,14 @@ def home():
     else:
         tarefas_filtradas = tarefas
 
+    contadores = contar_tarefas()
+
     return render_template(
         "index.html",
         tarefas=tarefas_filtradas,
         tarefa_edicao=None,
-        pesquisa=pesquisa
+        pesquisa=pesquisa,
+        contadores=contadores
     )
 
 
@@ -53,12 +57,14 @@ def cadastrar():
 def editar(id):
     tarefa_edicao = buscar_tarefa(id)
     tarefas = listar_tarefas()
+    contadores = contar_tarefas()
 
     return render_template(
         "index.html",
         tarefas=tarefas,
         tarefa_edicao=tarefa_edicao,
-        pesquisa=""
+        pesquisa="",
+        contadores=contadores
     )
 
 

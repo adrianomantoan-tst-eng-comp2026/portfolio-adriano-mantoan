@@ -54,6 +54,28 @@
     <section>
         <h2>Tarefas Cadastradas</h2>
 
+        <div class="contador-tarefas">
+            <div class="contador-card">
+                <strong>{{ contadores.total }}</strong>
+                <span>Total</span>
+            </div>
+
+            <div class="contador-card">
+                <strong>{{ contadores.a_fazer }}</strong>
+                <span>A Fazer</span>
+            </div>
+
+            <div class="contador-card">
+                <strong>{{ contadores.em_andamento }}</strong>
+                <span>Em Andamento</span>
+            </div>
+
+            <div class="contador-card">
+                <strong>{{ contadores.concluidas }}</strong>
+                <span>Concluídas</span>
+            </div>
+        </div>
+
         <form action="{{ url_for('home') }}" method="GET" class="pesquisa">
             <input
                 type="text"
