@@ -1,129 +1,183 @@
-💻 TechFlow Task Manager
+# 💻 TechFlow Task Manager
 
-Projeto desenvolvido para a disciplina de Software Engineering do curso de Engenharia da Computação da UniFECAF.
+Projeto desenvolvido para a disciplina de **Software Engineering** do curso de **Engenharia da Computação - UniFECAF**.
 
-📌 Descrição
+---
 
-A TechFlow Solutions, empresa fictícia especializada em desenvolvimento de software, foi contratada para criar um sistema web básico de gerenciamento de tarefas para uma startup do ramo de logística.
+# 📌 Descrição
 
-O objetivo do projeto foi desenvolver uma aplicação simples utilizando Python e Flask, permitindo o cadastro, edição, exclusão, pesquisa e acompanhamento das tarefas, aplicando conceitos estudados na disciplina de Engenharia de Software.
+A TechFlow Solutions, empresa fictícia especializada em desenvolvimento de software, foi contratada para desenvolver um sistema web básico de gerenciamento de tarefas para uma startup do ramo de logística.
 
-🎯 Objetivo
+O sistema permite cadastrar, editar, pesquisar, excluir e acompanhar tarefas por meio de diferentes status, simulando a aplicação das principais práticas estudadas durante a disciplina de Engenharia de Software.
+
+---
+
+# 🎯 Objetivo
 
 Desenvolver um sistema web de gerenciamento de tarefas aplicando conceitos de:
 
-Engenharia de Software;
-Metodologias Ágeis;
-Git e GitHub;
-GitHub Projects (Kanban);
-Testes Automatizados;
-Integração Contínua com GitHub Actions.
-📋 Escopo Inicial
+- Engenharia de Software
+- Metodologias Ágeis
+- Git e GitHub
+- GitHub Projects (Kanban)
+- Testes Automatizados
+- Integração Contínua com GitHub Actions
 
-O escopo inicial do projeto contemplava as seguintes funcionalidades:
+---
 
-Cadastro de tarefas;
-Listagem de tarefas;
-Edição de tarefas;
-Exclusão de tarefas;
-Alteração do status das tarefas;
-Organização das atividades utilizando Kanban.
-🔄 Metodologia Ágil Utilizada
+# 📄 Escopo Inicial
 
-Durante o desenvolvimento foi utilizada a metodologia Kanban, organizando as atividades nas colunas:
+O sistema contempla as seguintes funcionalidades:
 
-To Do
-In Progress
-Done
+- Cadastro de tarefas
+- Listagem de tarefas
+- Pesquisa de tarefas
+- Edição de tarefas
+- Exclusão de tarefas
+- Alteração do status das tarefas
+- Organização das atividades utilizando Kanban
 
-Essa abordagem permitiu acompanhar a evolução do projeto, controlar as atividades em andamento e registrar todas as etapas de desenvolvimento.
+---
 
-🛠 Tecnologias Utilizadas
-Python
-Flask
-HTML5
-CSS3
-Bootstrap
-SQLite
-PyTest
-Git
-GitHub
-GitHub Projects
-GitHub Actions
-📁 Estrutura do Projeto
+# 📋 Metodologia Ágil Utilizada
+
+Durante o desenvolvimento foi utilizada a metodologia **Kanban**, organizando as atividades nas colunas:
+
+- To Do
+- In Progress
+- Done
+
+Essa abordagem permitiu acompanhar a evolução do projeto, controlar as atividades em andamento e registrar todas as etapas do desenvolvimento.
+
+---
+
+# 🚀 Tecnologias Utilizadas
+
+- Python
+- Flask
+- HTML5
+- CSS3
+- SQLite
+- Pytest
+- Git
+- GitHub
+- GitHub Projects
+- GitHub Actions
+
+---
+
+# 📂 Estrutura do Projeto
+
+```
 engenharia-de-software/
 │
+├── .github/
+│   └── workflows/
+│
 ├── documentos/
+│   ├── backlog.md
+│   ├── requisitos.md
+│   ├── Relatório Explicativo-engenharia-de-software.docx
+│   └── Relatório Explicativo-engenharia-de-software.pdf
+│
 ├── imagens/
+│
 ├── src/
+│
 ├── static/
+│   └── css/
+│
 ├── templates/
+│
 ├── tests/
-├── .github/workflows/
+│
 ├── app.py
 ├── database.py
-├── banco.db
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-✅ Funcionalidades Implementadas
+```
 
-O sistema desenvolvido possui as seguintes funcionalidades:
+---
 
-Cadastro de tarefas;
-Edição de tarefas;
-Exclusão de tarefas;
-Pesquisa por título;
-Pesquisa por descrição;
-Alteração do status das tarefas;
-Controle de prioridades;
-Contadores automáticos de tarefas por status;
-Persistência dos dados utilizando banco SQLite;
-Interface web responsiva.
-🧪 Testes Automatizados
+# ✅ Funcionalidades Implementadas
 
-Foram desenvolvidos testes automatizados utilizando PyTest, permitindo validar as principais funcionalidades implementadas.
+- Cadastro de tarefas
+- Listagem das tarefas
+- Pesquisa por título
+- Pesquisa por descrição
+- Alteração de status
+- Prioridade das tarefas
+- Edição de tarefas
+- Exclusão de tarefas
+- Persistência dos dados utilizando SQLite
+- Contador automático de tarefas
+- Testes automatizados utilizando Pytest
+- Integração contínua utilizando GitHub Actions
 
-Os testes são executados automaticamente pelo GitHub Actions, garantindo maior confiabilidade ao projeto sempre que novas alterações são enviadas ao repositório.
+---
 
-⚙ Integração Contínua
+# 🧪 Testes Automatizados
 
-Foi configurado um pipeline de Integração Contínua (CI) utilizando GitHub Actions.
+Foram desenvolvidos testes automatizados utilizando o **Pytest**, garantindo o correto funcionamento das principais funcionalidades do sistema.
 
-A cada novo commit enviado ao repositório, o workflow executa automaticamente os testes do projeto, verificando o correto funcionamento das funcionalidades implementadas.
+Os testes são executados automaticamente pelo **GitHub Actions** a cada novo envio de código para o repositório.
 
-🔄 Mudança de Escopo
+---
 
-Durante o desenvolvimento surgiu a necessidade de ampliar o escopo inicialmente planejado.
+# 🔄 Mudança de Escopo
 
-Foi implementada uma nova funcionalidade permitindo definir a prioridade das tarefas, classificando-as como:
+Durante o desenvolvimento foi simulada uma mudança de escopo, conforme solicitado na atividade.
 
-Alta
-Média
-Baixa
+Nova funcionalidade implementada:
 
-Além disso, foi desenvolvido um painel contendo contadores automáticos de tarefas por status, permitindo uma visualização rápida das atividades cadastradas.
+- Prioridade das tarefas
 
-Toda essa alteração foi registrada no GitHub Projects através de novos cards, implementada em novos commits e validada novamente pelos testes automatizados.
+A alteração foi registrada através de:
 
-📊 Gerenciamento do Projeto
+- Novo card no GitHub Projects
+- Novo commit semântico
+- Atualização do sistema
+- Atualização desta documentação
 
-Todas as atividades foram acompanhadas utilizando o GitHub Projects, seguindo o fluxo Kanban.
+---
 
-Durante o desenvolvimento foram criados cards representando cada funcionalidade implementada, permitindo acompanhar toda a evolução do projeto desde o planejamento inicial até sua conclusão.
+# 📊 Gerenciamento do Projeto
 
-🚀 Status do Projeto
+O gerenciamento das atividades foi realizado através do **GitHub Projects**, utilizando a metodologia Kanban.
 
-Projeto concluído.
+As tarefas foram organizadas nas colunas:
 
-Todas as funcionalidades previstas foram implementadas, documentadas e testadas, atendendo aos requisitos propostos para a disciplina de Engenharia de Software.
+- To Do
+- In Progress
+- Done
 
-👨‍💻 Autor
+Todo o ciclo de desenvolvimento foi acompanhado por meio dos cards do projeto.
 
-Adriano Mantoan
+---
+
+# 📚 Documentação
+
+A pasta **documentos** contém:
+
+- Documento de Requisitos
+- Product Backlog
+- Relatório Técnico em Word
+- Relatório Técnico em PDF
+
+Também fazem parte do projeto:
+
+- Diagrama de Casos de Uso
+- Diagrama de Classes UML
+
+---
+
+# 👨‍💻 Autor
+
+**Adriano Mantoan**
 
 Curso: Engenharia da Computação
 
 Disciplina: Software Engineering
 
-Centro Universitário UniFECAF
+UniFECAF
