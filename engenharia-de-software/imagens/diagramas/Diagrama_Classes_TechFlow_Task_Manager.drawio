@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram name="Diagrama de Classes" id="techflow-classes">
+    <mxGraphModel dx="1945" dy="4182" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1F4E79;" value="Diagrama de Classes UML - TechFlow Task Manager" vertex="1">
+          <mxGeometry height="40" width="700" x="195" y="-3265" as="geometry" />
+        </mxCell>
+        <mxCell id="app" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;align=left;spacingLeft=12;container=0;" value="&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;app.py&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;+ home()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ cadastrar()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ editar(id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ atualizar(id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ excluir(id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ alterar_status_rota(id)&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="290" x="90" y="-3129" as="geometry" />
+        </mxCell>
+        <mxCell id="database" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;align=left;spacingLeft=12;" value="&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;database.py&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;+ conectar()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ criar_tabela()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ salvar_tarefa(titulo, descricao)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ listar_tarefas(pesquisa=None)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ buscar_tarefa(id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ atualizar_tarefa(id, titulo, descricao)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ excluir_tarefa(id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ alterar_status(id, status)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;+ contar_tarefas()&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="270" width="350" x="435" y="-3149" as="geometry" />
+        </mxCell>
+        <mxCell id="tarefa" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=12;" value="&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;Tarefa&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;hr&gt;&lt;div&gt;- id: INTEGER&lt;/div&gt;&lt;div&gt;- titulo: TEXT&lt;/div&gt;&lt;div&gt;- descricao: TEXT&lt;/div&gt;&lt;div&gt;- status: TEXT&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="250" x="850" y="-3104" as="geometry" />
+        </mxCell>
+        <mxCell id="sqlite" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;align=center;verticalAlign=middle;" value="&lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;banco.db&lt;br&gt;Tabela: tarefas" vertex="1">
+          <mxGeometry height="95" width="250" x="485" y="-2774" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_db" edge="1" parent="1" source="app" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=13;" target="database" value="utiliza">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="380" y="-3014" as="sourcePoint" />
+            <mxPoint x="435" y="-3014" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_db_tarefa" edge="1" parent="1" source="database" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=13;" target="tarefa" value="gerencia">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="785" y="-3019" as="sourcePoint" />
+            <mxPoint x="850" y="-3019" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_db_sqlite" edge="1" parent="1" source="database" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=13;" target="sqlite" value="persiste dados">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="610" y="-2879" as="sourcePoint" />
+            <mxPoint x="610" y="-2774" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;align=left;spacing=12;" value="&lt;b&gt;Observação: O projeto utiliza arquitetura funcional em Python. Por isso, os módulos app.py e database.py foram representados no diagrama em substituição às classes tradicionais, enquanto Tarefa representa a entidade persistida na tabela tarefas do banco de dados SQLite.&lt;/b&gt;" vertex="1">
+          <mxGeometry height="75" width="810" x="140" y="-2599" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
