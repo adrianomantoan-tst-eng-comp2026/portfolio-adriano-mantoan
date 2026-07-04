@@ -37,6 +37,13 @@
             <label>Descrição</label>
             <textarea name="descricao" required>{{ tarefa_edicao.descricao if tarefa_edicao else '' }}</textarea>
 
+            <label>Prioridade</label>
+            <select name="prioridade" required>
+                <option value="Alta" {% if tarefa_edicao and tarefa_edicao.prioridade == "Alta" %}selected{% endif %}>Alta</option>
+                <option value="Média" {% if not tarefa_edicao or tarefa_edicao.prioridade == "Média" %}selected{% endif %}>Média</option>
+                <option value="Baixa" {% if tarefa_edicao and tarefa_edicao.prioridade == "Baixa" %}selected{% endif %}>Baixa</option>
+            </select>
+
             {% if tarefa_edicao %}
                 <input type="hidden" name="id" value="{{ tarefa_edicao.id }}">
             {% endif %}
@@ -99,6 +106,10 @@
                         <h3>#{{ tarefa.id }} - {{ tarefa.titulo }}</h3>
                         <span class="status">{{ tarefa.status }}</span>
                     </div>
+
+                    <span class="prioridade prioridade-{{ tarefa.prioridade|lower }}">
+                        Prioridade: {{ tarefa.prioridade }}
+                    </span>
 
                     <p>{{ tarefa.descricao }}</p>
 

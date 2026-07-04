@@ -16,22 +16,32 @@ def criar_tabela():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo TEXT NOT NULL,
             descricao TEXT NOT NULL,
-            status TEXT NOT NULL DEFAULT 'A Fazer'
+            status TEXT NOT NULL DEFAULT 'A Fazer',
+            prioridade TEXT NOT NULL DEFAULT 'Média'
         )
     """)
+
+    cursor.execute("PRAGMA table_info(tarefas)")
+    colunas = [coluna[1] for coluna in cursor.fetchall()]
+
+    if "prioridade" not in colunas:
+        cursor.execute("""
+            ALTER TABLE tarefas
+            ADD COLUMN prioridade TEXT NOT NULL DEFAULT 'Média'
+        """)
 
     conexao.commit()
     conexao.close()
 
 
-def salvar_tarefa(titulo, descricao):
+def salvar_tarefa(titulo, descricao, prioridade):
     conexao = conectar()
     cursor = conexao.cursor()
 
     cursor.execute("""
-        INSERT INTO tarefas (titulo, descricao, status)
-        VALUES (?, ?, ?)
-    """, (titulo, descricao, "A Fazer"))
+        INSERT INTO tarefas (titulo, descricao, status, prioridade)
+        VALUES (?, ?, ?, ?)
+    """, (titulo, descricao, "A Fazer", prioridade))
 
     conexao.commit()
     conexao.close()
@@ -45,12 +55,26 @@ def listar_tarefas(pesquisa=None):
         cursor.execute("""
             SELECT * FROM tarefas
             WHERE titulo LIKE ? OR descricao LIKE ?
-            ORDER BY id DESC
+            ORDER BY
+                CASE prioridade
+                    WHEN 'Alta' THEN 1
+                    WHEN 'Média' THEN 2
+                    WHEN 'Baixa' THEN 3
+                    ELSE 4
+                END,
+                id DESC
         """, (f"%{pesquisa}%", f"%{pesquisa}%"))
     else:
         cursor.execute("""
             SELECT * FROM tarefas
-            ORDER BY id DESC
+            ORDER BY
+                CASE prioridade
+                    WHEN 'Alta' THEN 1
+                    WHEN 'Média' THEN 2
+                    WHEN 'Baixa' THEN 3
+                    ELSE 4
+                END,
+                id DESC
         """)
 
     tarefas = cursor.fetchall()
@@ -69,15 +93,15 @@ def buscar_tarefa(id):
     return tarefa
 
 
-def atualizar_tarefa(id, titulo, descricao):
+def atualizar_tarefa(id, titulo, descricao, prioridade):
     conexao = conectar()
     cursor = conexao.cursor()
 
     cursor.execute("""
         UPDATE tarefas
-        SET titulo = ?, descricao = ?
+        SET titulo = ?, descricao = ?, prioridade = ?
         WHERE id = ?
-    """, (titulo, descricao, id))
+    """, (titulo, descricao, prioridade, id))
 
     conexao.commit()
     conexao.close()

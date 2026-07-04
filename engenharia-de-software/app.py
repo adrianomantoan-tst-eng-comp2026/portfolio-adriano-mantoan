@@ -46,9 +46,10 @@ def home():
 def cadastrar():
     titulo = request.form.get("titulo")
     descricao = request.form.get("descricao")
+    prioridade = request.form.get("prioridade", "Média")
 
     if titulo:
-        salvar_tarefa(titulo, descricao)
+        salvar_tarefa(titulo, descricao, prioridade)
 
     return redirect(url_for("home"))
 
@@ -72,8 +73,9 @@ def editar(id):
 def atualizar(id):
     titulo = request.form.get("titulo")
     descricao = request.form.get("descricao")
+    prioridade = request.form.get("prioridade", "Média")
 
-    atualizar_tarefa(id, titulo, descricao)
+    atualizar_tarefa(id, titulo, descricao, prioridade)
 
     return redirect(url_for("home"))
 
